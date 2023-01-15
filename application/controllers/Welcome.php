@@ -22,4 +22,14 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+	public function About()
+	{
+		//fungsi untuk meload view about.php
+		$this->load->view('About');
+	}
+	public function Profile()
+	{
+		//fungsi untuk meload view about.php
+		$this->load->view('Profile');
+	}
 }
