@@ -53,7 +53,7 @@ $this->_updateLastLogin($userid);
 redirect('admin/Menu');
 } else if ($user['role'] == 'sekretaris') {
 $this->_updateLastLogin($userid);
-redirect('surat');
+redirect('surat_ajuan');
 }
 } else {
 //jika password salah

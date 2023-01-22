@@ -2,14 +2,12 @@
 <div class="container-fluid">
 <h1 class="mt-4"></h1>
 <ol class="breadcrumb mb-4">
-<li class="breadcrumb-item"><a href="<?php echo site_ur
-l('admin/surat_masuk') ?>">User</a></li>
+<li class="breadcrumb-item"><a href="<?php echo site_url('admin/surat_masuk') ?>">User</a></li>
 <li class="breadcrumb-item active"><?php echo $title ?></li>
 </ol>
 <div class="card mb-4">
 <div class="card-header">
-<a href="<?php echo site_url('admin/surat_masuk/add') ?
->"><i class="fas fa-plus"></i> Add New</a>
+<a href="<?php echo site_url('admin/surat_masuk/add') ?>"><i class="fas fa-plus"></i> Add New</a>
 </div>
 <?php if ($this->session->flashdata('success')): ?>
 <div class="alert alert-success" role="alert">
@@ -34,31 +32,28 @@ id="tabelsurat" width="100%" cellspacing="0">
 <tbody>
 <?php
 $no =1;
-foreach ($surat as $suratdata) {
-echo "<tr>
-<td>$no</td>
-<td>$suratdata->no_surat</td>
-<td>$suratdata->perihal</td>
-<td>$suratdata->keterangan</td>
-<td>$suratdata->tgl_surat</td>
+foreach ($surat as $suratdata) : ?> 
+	<tr>
+<td><?php echo $no++?></td>
+<td> <?php echo  $suratdata->no_surat ?></td>
+<td><?php echo $suratdata->perihal ?></td>
+<td><?php echo $suratdata->keterangan ?></td>
+<td><?php echo $suratdata->tgl_surat ?></td>
 <td>
-<img src=".base_url('assets/photo/
-surat_masuk/'.$suratdata->image)." width ='64'/>
+<img src="<?php echo base_url('Assets/assets/photo/
+surat_masuk/'.$suratdata->image)?>" width ='64'/>
 </td>
 <td>
-<div>
-<a href=".base_url('admin/surat_masuk/
-getedit/' . $suratdata->id)." class='btn btn-sm btn-info'><i class='fas f
-a-edit'></i> Edit</a>
-<a href=".base_url('admin/surat_masuk/
-delete/' . $suratdata->id)." class='btn btn-sm btn-danger'
-onclick='return confirm(\"Ingin mengapus data
-user ini?\");'><i class='fas fa-trash'></i> Hapus</a>
-</div>
+
+
+<?php echo anchor('admin/surat_masuk/getedit/'.$suratdata->id,'  <div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> </div>') ?> 
+
+<div onclick="return confirm ('Ingin mengapus data user ini ') ">
+ <?php echo anchor('admin/surat_masuk/delete/'.$suratdata->id,'   <div class="btn btn-sm btn-danger mt-1" " >  <i class="fa fa-trash"></i> </div>  ') ?> </div>
+
 </td>
-</tr>";
-$no++;
-} ?>
+</tr>
+ <?php  endforeach; ?>
 </tbody>
 </table>
 </div>

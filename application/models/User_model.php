@@ -16,10 +16,28 @@ $data = array(
 'full_name' => htmlspecialchars($this->input->post('full_name'), true),
 'phone' => htmlspecialchars($this->input->post('phone'), true),
 'role' => htmlspecialchars($this->input->post('role'), true),
-'is_active' => 1,
+'is_active' => '1',
 );
 return $this->db->insert($this->_table,$data);
 }
+
+/*
+'no_surat' => $this->input->post('no_surat'),
+'tgl_surat' => $this->input->post('tgl_surat'),
+'surat_from' => $this->input->post('surat_from'),
+'surat_to' => $this->input->post('surat_to'),
+'tgl_terima' => $this->input->post('tgl_terima'),
+'perihal' => $this->input->post('perihal'),
+'keterangan' => $this->input->post('keterangan'),
+'image'=>$this->uploadImage(),
+'is_active' => '1',*/
+
+
+
+
+
+
+
 public function getById($id)
 {
 return $this->db->get_where($this->_table, ["id" => $id])->row();

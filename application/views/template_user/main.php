@@ -1,9 +1,9 @@
 <?php 
-$this->load->view('admin/Template_user/Header');
-$this->load->view('admin/Template_user/Navbar');
-$this->load->view('admin/Template_user/Sidebar');
+$this->load->view('template_user/header');
+$this->load->view('template_user/navbar');
+$this->load->view('template_user/sidebar');
 $this->load->view($content );
-$this->load->view('admin/Template_user/Footer');
+$this->load->view('template_user/footer');
 
 
 ?>

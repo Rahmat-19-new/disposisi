@@ -7,43 +7,35 @@
 </ol>
 <div class="card mb-4">
 <div class="card-body">
-<form action="<?php echo site_url('admin/user/edit') ?>" meth
-od="post" >
+<form action="<?php echo site_url('admin/user/edit') ?>" method="post" >
 <div class="mb-3">
 <label for="username">USERNAME <code>*</code></label>
-<input class="form-control" type="hidden" name="id" valu
-e="<?=$user->id;?>" required />
-<input class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>"
-type="text" name="username" value="<?=$user->username;?>" placeholder="USERNAME" required />
+<input class="form-control" type="hidden" name="id" value="<?php echo$user->id;?>" required />
+<input class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>"type="text" name="username" value="<?php echo $user->username;?>" placeholder="USERNAME" required />
 <div class="invalid-feedback">
 <?php echo form_error('username') ?>
 </div>
 </div>
 <div class="mb-3">
 <label for="full_name">FULL NAME <code>*</code></label>
-<input class="form-control" type="text" name="full_name"
-value="<?=$user->full_name;?>" placeholder="FULL NAME" required />
+<input class="form-control" type="text"     name="full_name"value="<?php echo $user->full_name;?>" placeholder="FULL NAME" required />
 </div>
 <div class="mb-3">
 <label for="phone">PHONE</label>
-<input class="form-control" type="text" name="phone" valu
-e="<?=$user->phone;?>" placeholder="PHONE" required/>
+<input class="form-control" type="text" name="phone" value="<?php echo $user->phone;?>" placeholder="PHONE" required/>
 </div>
 <div class="mb-3">
 <label for="email">EMAIL</label>
-<input class="form-control" type="email" name="email" val
-ue="<?=$user->email;?>" placeholder="EMAIL" required/>
+<input class="form-control" type="email" name="email" value="<?php echo $user->email;?>" placeholder="EMAIL" required/>
 </div>
 <div class="mb-3">
 <label for="role">Role</label>
-<select class="form-select" id="role" name="role" req
-uired>
+<select class="form-select" id="role" name="role" required>
 <option selected></option>
 <option value="admin">ADMIN</option>
 <option value="sekretaris">SEKRETARIS</option>
 </select>
 </div>
-<button class="btn btn-primary" type="submit"><i class="fas f
-a-plus"></i> Save</button>
+<button class="btn btn-primary" type="submit"><i class="fas fa-plus"></i> Save</button>
 </form>
 </div>

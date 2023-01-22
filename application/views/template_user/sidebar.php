@@ -5,7 +5,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="<?php echo base_url() ?>Menu">
+                            <a class="nav-link" href="<?php echo base_url() ?>Surat_ajuan">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -17,10 +17,10 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">USER</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">SURAT MASUK</a>
-                                      <a class="nav-link" href="layout-static.html">SURAT KELUIAR</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">DISPOSISI</a>
+                                   
+                                    <a class="nav-link" href="<?php echo base_url() ?>Surat_ajuan">SURAT </a>
+                                      <a class="nav-link" href="<?php echo base_url() ?>Templatesurat">TEMPLATE SURAT </a>
+                                  
                                 </nav>
                             </div>
                                               <div class="sb-sidenav-menuheading">Addons</div>
@@ -29,11 +29,7 @@
 s="fas fa-chart-area"></i></div>
 SETTING
 </a>
-<a class="nav-link" href="tables.html">
-<div class="sb-nav-link-icon"><i clas
-s="fas fa-table"></i></div>
-Tables
-</a>
+
 </div>
 </div>
                     <div class="fixet-bottom sb-sidenav-footer">

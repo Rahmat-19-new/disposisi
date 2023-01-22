@@ -18,7 +18,7 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="layout-static.html">USER</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">SURAT MASUK</a>
+                                    <a class="nav-link" href="<?php echo base_url() ?>admin/Surat_masuk">SURAT MASUK</a>
                                       <a class="nav-link" href="layout-static.html">SURAT KELUIAR</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">DISPOSISI</a>
                                 </nav>
