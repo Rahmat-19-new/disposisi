@@ -13,7 +13,7 @@ public function index()
 $data = array(
 'title' => 'View Data User',
 'user' => $this->User_model->getAll(),
-'content'=>'admin/User/index'
+'content' =>'admin/User/index'
 );
 $this->load->view('admin/Template/Main',$data);
 }

@@ -1,85 +1,111 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initialscale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>Login - Disposisi Surat</title>
-<link href="<?= base_url('assets/css/styles.css')?>" re
-l="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login - Disposisi Surat</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="<?php echo base_url() ?>Assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="<?php echo base_url() ?>Assets/css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
-<body class="bg-primary">
-<div id="layoutAuthentication">
-<div id="layoutAuthentication_content">
-<main>
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-lg-5">
-<div class="card shadow-lg border-0 round
-ed-lg mt-5">
-<div class="card-header"><h3 clas
-s="text-center font-weight-light my-4">Login</h3></div>
-<div class="card-body">
-<?php echo $this->session-
->flashdata('message'); ?>
-<form action="<?= base_ur
-l('login/dologin') ?>" method="POST">
-<div class="form-floating mb3">
-<input class="formcontrol" id="inputEmail" name="email" type="email" placeholder="name@exam
-ple.com" />
-<label for="inputEmail">E
-mail address</label>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                           
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class=" text-black mb-4"><b> LOGIN</b></h1>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="card-body">
+                                  <?php echo $this->session->flashdata('message'); ?>
+                                
+                                   <!-- <form class="user">-->
+<form method="post" action="<?php echo base_url(); ?>Login" class="user">
+<div class="form-floating ">
+<label class="h5 font-weight-bold text-dark" >U S E R N A M E</label>
+<input class="form-control" id="inputEmail" type="text" placeholder="Username Anda " name="email" />
+<!-- menampilkan kesalahan ketik-->
+<?php echo form_error('username', '<div class=" h3 text-dark  ml-3">','</div>') ?>
+<label for="inputEmail"></label>
 </div>
-<div class="form-floating mb3">
-<input class="formcontrol" id="inputPassword" name="password" type="password" placeholder="
-Password" />
-<label for="inputPassword
-">Password</label>
+
+<div class="form-floating ">
+<label class="h5 font-weight-bold text-dark" >P A S S W O R D</label>
+<input class="form-control form-control-user" id="inputPassword" type="password" placeholder="Password Anda" name="password" />
+<!-- menampilkan kesalahan ketik-->
+<?php echo form_error('password', '<div class=" h3 text-dark  ml-3">','</div>') ?>
 </div>
-<div class="form-check mb-3">
-<input class="form-checkinput" id="inputRememberPassword" type="checkbox" value="" />
-<label class="form-checklabel" for="inputRememberPassword">Remember Password</label>
+<div class="form-group">
+    
+       <input  type="checkbox" value="" />
+         
+<label class="custom-control-label" for="inputRememberPassword">
+RememberMe</label>
+
+    </div><br>
+    <input type="submit" class="btn btn-primary" value="Login" />
 </div>
-<div class="d-flex alignitems-center justify-content-between mt-4 mb-0">
-<a class="small" href="pa
-ssword.html">Forgot Password?</a>
-<input type="submit" clas
-s="btn btn-primary" value="Login" />
-</div>
-</form>
-</div>
-<div class="card-footer text-center p
-y-3">
-<div class="small"><a href="regis
-ter.html">Need an account? Sign up!</a></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-<div id="layoutAuthentication_footer">
-<footer class="py-4 bg-light mt-auto">
-<div class="container-fluid px-4">
-<div class="d-flex align-items-center justifycontent-between small">
-<div class="text-muted">Copyright &copy; Your
-Website 2021</div>
-<div>
-<a href="#">Privacy Policy</a>
-&middot;
-<a href="#">Terms &amp; Conditions</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/
-js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="<?= base_url('assets/js/scripts.js')?> "></script>
+                                      
+                                        <hr>
+                                  </form>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url() ?>Assets/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo base_url() ?>Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo base_url() ?>Assets/js/sb-admin-2.min.js"></script>
+
 </body>
+
 </html>
+
+
+
+
+
+

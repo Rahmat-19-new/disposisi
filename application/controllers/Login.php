@@ -1,3 +1,8 @@
+
+
+
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller
@@ -9,46 +14,43 @@ $this->load->library('form_validation');
 }
 public function index()
 {
-$this->form_validation->set_rules('email','email', 'required|
-trim');
-$this->form_validation->set_rules('password', 'Password', 'require
-d|trim');
+$this->form_validation->set_rules('email','email', 'required|trim');
+$this->form_validation->set_rules('password', 'password', 'required|trim');
 if ($this->form_validation->run() == false) {
 
 
 
-$this->load->view('admin/Template/Header');
-$this->load->view('admin/Template/Navbar');
-$this->load->view('admin/Template/Sidebar');
-$this->load->view($content );
-$this->load->view('admin/Template/Footer');
+$this->load->view('login/index');
 
 } else {
 $this->dologin();
 }
+
+
 }
 public function dologin()
 {
 $user = $this->input->post('email');
-$pswd = $this->input->post('password');
+$pw = $this->input->post('password');
 // cari user berdasarkan email
-$user = $this->db->get_where('tb_user', ['email' => $user])->row_array();
+$user = $this->db->get_where('user',['email' => $user])->row_array();
 // jika user terdaftar
 if($user){
 // periksa password-nya
-if (password_verify($pswd, $user['password'])) {
+if (password_verify($pw ,$user ['password'])) {
 $data = [
 'id' => $user['id'],
 'email' => $user['email'],
+'password' => $user['password'],
 'username' => $user['username'],
-'role' => $user['role']
+'role' => $user['role'],
 ];
 $userid = $user['id'];
 $this->session->set_userdata($data);
 // periksa role-nya
 if ($user['role'] == 'admin') {
 $this->_updateLastLogin($userid);
-redirect('admin/menu');
+redirect('admin/Menu');
 } else if ($user['role'] == 'sekretaris') {
 $this->_updateLastLogin($userid);
 redirect('surat');
@@ -57,25 +59,25 @@ redirect('surat');
 //jika password salah
 $this->session->set_flashdata('message', '<div class="alert
 alert-danger" role="alert"> <b>Error :</b> Password Salah. </div>');
-redirect('/');
+redirect('Login');
 }
 } else {
 //Jika user tidak terdaftar
 // echo "User Kadada";
 $this->session->set_flashdata('message', '<div class="alert alert
 -danger" role="alert"> <b>Error :</b> User Tidak Terdaftar. </div>');
-redirect('/');
+redirect('Login');
 }
 }
 private function _updateLastLogin($userid){
-$sql = "UPDATE tb_user SET last_login=now() WHERE id=$userid";
+$sql = "UPDATE user SET last_login=now() WHERE id=$userid";
 $this->db->query($sql);
 }
 public function logout()
 {
 // hancurkan semua sesi
 $this->session->sess_destroy();
-redirect(site_url('login'));
+redirect(site_url('Login'));
 }
 public function block()
 {

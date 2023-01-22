@@ -2,8 +2,7 @@
 <div class="container-fluid">
 <h1 class="mt-4"></h1>
 <ol class="breadcrumb mb-4">
-<li class="breadcrumb-item"><a href="<?php echo site_ur
-l('admin/user') ?>">user</a></li>
+<li class="breadcrumb-item"><a href="<?php echo site_url('admin/user') ?>">user</a></li>
 <li class="breadcrumb-item active">user Baru</li>
 </ol>
 <div class="card mb-4">
@@ -14,10 +13,8 @@ od="post" >
 <label for="username">USERNAME <code>*</code></label>
 <input class="form-control" type="hidden" name="id" valu
 e="<?=$user->id;?>" required />
-<input class="form-control <?php echo form_erro
-r('username') ? 'is-invalid':'' ?>"
-type="text" name="username" value="<?=$user-
->username;?>" placeholder="USERNAME" required />
+<input class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>"
+type="text" name="username" value="<?=$user->username;?>" placeholder="USERNAME" required />
 <div class="invalid-feedback">
 <?php echo form_error('username') ?>
 </div>
